@@ -1,0 +1,7 @@
+<app-list-add></app-list-add>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of list; let i = index" (click)="onClick(item, i)">
+    <app-list-item [listItem]="item" [index]="i"></app-list-item>
+  </li>    
+</ul>

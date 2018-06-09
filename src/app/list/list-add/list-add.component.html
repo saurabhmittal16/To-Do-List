@@ -1,0 +1,38 @@
+<form (ngSubmit)="onAdd(f)" #f="ngForm">
+  <div class="input-group mb-3">
+      <input 
+        type="text" 
+        class="form-control"
+        aria-label="item" 
+        aria-describedby="basic-addon2" 
+        name="item" 
+        [(ngModel)]="item"
+        required>
+      <div class="input-group-append">
+        <button 
+          class="btn btn-primary" 
+          type="submit"
+          [disabled]="!f.valid"
+        >
+        {{ this.editMode ? "Update" : "Add" }}
+      </button>
+      <button 
+      class="btn btn-danger" 
+      type="button"
+      [disabled]="!f.valid"
+      (click)="onCancel()"
+      >
+        Cancel
+      </button>
+      <button 
+      class="btn btn-success" 
+      type="button"
+      (click)="onUndo()"
+      [disabled]="!undo"
+      >
+        Undo
+      </button>
+      </div>
+  </div>
+</form>
+
