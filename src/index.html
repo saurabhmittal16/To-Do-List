@@ -2,10 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ToDoList</title>
   <base href="/">
 </head>
 <body>
-  <app-root></app-root>
+  <noscript>
+      <h3 style="text-align: center">Sorry, JavaScript needs to be enabled to run this application.</h3>
+  </noscript>
+  <app-root>
+      <div>
+          <img style="margin-left: auto;margin-right: auto;display: block;" src="assets/giphy.gif" alt="loader">
+      </div>
+  </app-root>
+  <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }).catch(function(err) {
+              console.log('ServiceWorker registration failed: ', err);
+          });
+      }
+  </script>
 </body>
 </html>
