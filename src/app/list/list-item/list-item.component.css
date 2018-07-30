@@ -3,3 +3,8 @@ span {
     font-size: 1.2em;
     margin-left: 20px;
 }
+
+img#delete {
+    height: 25px;
+    cursor: pointer;
+}
