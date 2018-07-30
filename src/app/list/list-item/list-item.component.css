@@ -8,3 +8,14 @@ img#delete {
     height: 25px;
     cursor: pointer;
 }
+
+@media (max-width: 450px) {
+    span {
+        font-size: 1em;
+    }
+
+    img#delete {
+        height: 20px;
+        cursor: pointer;
+    }
+}

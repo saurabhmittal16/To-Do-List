@@ -6,10 +6,7 @@ export class ListService {
     itemClicked = new Subject<{ item: string, index: number }>();
     itemDeleted = new Subject<boolean>();
 
-    private list: string[] = [
-        'Do Homework',
-        'Eat Food'
-    ];
+    private list: string[];
 
     private deletedItem: {
         item: string,
@@ -17,7 +14,11 @@ export class ListService {
     };
 
     initList() {
-        this.list = JSON.parse(localStorage.getItem('items'));
+        const list = JSON.parse(localStorage.getItem('items'));
+        if (list)
+            this.list = list;
+        else
+            this.list = [];
     }
 
     setList() {
