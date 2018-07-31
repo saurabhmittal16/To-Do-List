@@ -31,6 +31,7 @@ export class ListAddComponent implements OnInit {
       (value) => {
         this.undo = value;
         this.item = '';
+        this.onCancel();
       }
     );
   }
